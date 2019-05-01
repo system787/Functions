@@ -1,10 +1,10 @@
 package com.hoang.vincent.data.structures;
 
-public class Stack<E> {
+public class Queue<E> {
 
     private LinkedList<E> mList;
 
-    public Stack() {
+    public Queue() {
         mList = new LinkedList<>();
     }
 
@@ -16,20 +16,20 @@ public class Stack<E> {
         mList = list;
     }
 
+    public void queue(E data) {
+        getList().insertEnd(data);
+    }
+
+    public E dequeue() {
+        return getList().remove(0);
+    }
+
     public boolean isEmpty() {
         return getList().isEmpty();
     }
 
     public E peek() {
         return getList().getNode(0).getData();
-    }
-
-    public void push(E data) {
-        getList().insertFront(data);
-    }
-
-    public E pop() {
-        return getList().remove(0);
     }
 
     @Override
